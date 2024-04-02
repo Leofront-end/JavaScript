@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Qual é o seu pais?</h1>
+    <input type="text" name="txtp" id="txtp">
+    <input type="button" value="Enviar" onclick="seuPais()">
+    <div id="res"></div>
+
+    <script>
+        function seuPais() {
+            var pais = window.document.getElementById('txtp')
+            var paises = (pais.value)
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Seu pais é ${paises}</p>`
+            if (paises == 'Brasil') {
+                res.innerHTML += '<p>Você é brasileiro </p>'
+            } else {
+                res.innerHTML += '<p>Você é Estrangeiro</p>'
+            }
+        }
+    </script>
+</body>
+</html>
