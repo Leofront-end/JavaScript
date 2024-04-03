@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" onclick="Conversor()">
+    <div id="res">Clique no botão acima para iniciar</div>
+
+    <script>
+        function Conversor() {
+            var valor = parseFloat(window.prompt('Digite uma distania em metros (m)').replace(".", ",")) 
+            var res = window.document.getElementById('res')
+            var km = valor / 1000
+            var hm = valor / 100
+            var dam = valor / 10
+            var dm = valor * 10
+            var cm = valor * 100
+            var mm = valor * 1000
+            res.innerHTML = `<p>A distância de ${valor} metros, coresponde a...</p>`
+            res.innerHTML += `<p>${km} quilometros (Km)</p>`
+            res.innerHTML += `<p>${km} quilometros (Km)</p>`
+            res.innerHTML += `<p>${hm} hectômetros (Hm)</p>`
+            res.innerHTML += `<p>${dam} decâmetros (Dam)</p>`
+            res.innerHTML += `<p>${dm} decimetros (Dm)</p>`
+            res.innerHTML += `<p>${cm} centimetros (cm)</p>`
+            res.innerHTML += `<p>${mm} milimetros (mm)</p>`
+
+
+        }
+    </script>
+</body>
+</html>

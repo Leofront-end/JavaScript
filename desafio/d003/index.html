@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antes e Depois</title>
+    <title>Antes e depois</title>
+    <style>
+        div {
+            background: gray;
+            width: 150px;
+            padding: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Antes e Depois</h1>
-    <input type="button" value="Antecessor e Sucessor" onclick="Num()">
+    <h1>Antecessor e Sucessor</h1>
+    <div onclick="Num()">Antecessor e Sucessor</div>
 
     <script>
         function Num() {
-            var n1 = window.prompt('Digite um numero inteiro qualquer')
-            var n = parseInt(n1.value)
-            
-            window.alert(`${n}`)
+            var n1 = window.prompt('Digite um numero Inteiro qualquer')
+            var n1Inteiro = parseInt(n1)
+            var n2 = n1Inteiro - 1
+            var n3 = n1Inteiro + 1 
+            window.alert(`Antes de ${n1}, temos o ${n2}.\nDepois de ${n1}, temos o ${n3}.`)
         }
     </script>
 </body>

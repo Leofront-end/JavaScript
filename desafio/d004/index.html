@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Troco</title>
+</head>
+<body>
+    <h1>Calcular Troco</h1>
+    <div onclick="Compra()">Comprar Produto</div>
+
+    <script>
+        function Compra() {
+            var p = window.prompt('Qual produto você está comprando?')
+            var custo = window.prompt(`Quanto custa o ${p} que você está comprando?`)
+            var custo1 = parseFloat(custo).toFixed(2).replace(".",",")
+            var din = window.prompt(`Qual o valor que você deu para pagar mouse gamer?`)
+            var din1 = parseFloat(din).toFixed(2).replace(".",",")
+            var troco = din1 - custo1
+            var troco1 = troco.toFixed(2).replace(".",",")
+            window.alert(`Você comprou ${p} que custou R$ ${custo1}.\nDeu R$ ${din1} em dinheiro e vai receber R$ ${troco1} de troco.\nVolte Sempre!`) 
+        }
+    </script>
+</body>
+</html>
