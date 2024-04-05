@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolvendo Bhaskara</title>
+    <style>
+        span {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Considerando uma equação no formato <span>a</span>x + <span>b</span>x + <span>c</span> = 0, aperte o botão acima para calcular o valor de &Delta; </div>
+
+    <script>
+        function Calcular() {
+            var a = window.prompt('Qual o valor de a?')
+            var b = window.prompt('Qual o valor de b?')
+            var c = window.prompt('Qual o valor de c')
+            var total = b*b - 4 * a * c
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<h2>Resolvendo Bhaskara<h2>`
+            res.innerHTML += `<p>A equação atual é ${a}x + ${b}x + ${c} = 0</p>`
+            res.innerHTML += `<p>O cálculo realizado será &Delta; = ${b} - 4.${a}.${c}</p>`
+            res.innerHTML += `<p>O valor calculado foi &Delta; = ${total}</p>` 
+
+        }
+    </script>
+</body>
+</html>
