@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+</head>
+<body>
+    <header>
+        <h1>O preço mudou</h1>
+    </header>
+    <main>
+        <input type="button" value="Verificar" onclick="Verificar()">
+        <div id="res">Clique no botão acima para analisar a mudança de preço </div>
+    </main>
+    <script>
+        function Verificar() {
+            var pa = parseFloat(window.prompt("Qual era o preço anterior do produto?")).toFixed(2)
+            var pd = parseFloat(window.prompt("Qual é o preço atual do produto?")).toFixed(2)
+            var res = window.document.getElementById('res')
+            var v1 = pa.value
+            var v2 = pd.value
+            
+            if (v1 < v2 ) {
+                var dif = (pd - pa).toFixed(2)
+                var porcentagem = (dif*100 / pa).toFixed(2)
+                res.innerHTML = `<p><strong>Analisando os valores informados<strong></p>`
+                res.innerHTML += `O produto custava R$ ${pa.replace(".",",")} e agora custa R$ ${pd.replace(".",",")}`
+                res.innerHTML += `<p>Hoje o produto está mais caro</p>`
+                res.innerHTML += `<p>O preço subiu R$ ${dif.replace(".",",")} em relaçao ao preço anterior</p>`
+                res.innerHTML += `Uma variação de ${porcentagem.replace(".",",")}% para cima`
+                
+            }else {
+                var dif = (pa - pd).toFixed(2)
+                var porcentagem = (dif*100 / pa).toFixed(2)
+                res.innerHTML = `<p><strong>Analisando os valores informados<strong></p>`
+                res.innerHTML += `O produto custava R$ ${pa.replace(".",",")} e agora custa R$ ${pd.replace(".",",")}`
+                res.innerHTML += `<p>Hoje o produto está mais barato</p>`
+                res.innerHTML += `<p>O preço caiu R$ ${dif.replace(".",",")} em relaçao ao preço anterior</p>`
+                res.innerHTML += `Uma variação de ${porcentagem.replace(".",",")}% para cima`
+            }
+        }
+    </script>
+</body>
+</html>
