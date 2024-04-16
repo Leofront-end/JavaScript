@@ -5,5 +5,5 @@ function parimp(n) {
         return 'Impar'
     }
 }
-let res = parimp(11)
-console.log(res)
+
+console.log(parimp(4))
